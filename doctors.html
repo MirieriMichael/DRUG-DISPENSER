@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Dispenser - Doctor's Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #007bff;
+        } 
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+    </style>
+</head>
+<div class="user-info">
+    <?php if ($_SESSION['loggedIn'] === true) {
+
+        echo "Welcome, " . $firstName . " " . $lastName;
+    } 
+    ?>
+</div>
+<body>
+    <h1>OUR CLIENTS' HEALTH IS OUR PRIORITY</h1>
+    <form action="DBS.php" method="post">
+        <label for="FirstName">First Name:</label>
+        <input type="text" id="FirstName" name="FirstName">
+        <br>
+        <label for="LastName">Last Name:</label>
+        <input type="text" id="LastName" name="LastName">
+        <br>
+        <label for="Email">Email:</label>
+        <input type="text" id="Email" name="Email">
+        <br>
+        <label for="SSN">SSN:</label>
+        <input type="number" id="SSN" name="SSN">
+        <br>
+        <br>
+        <input type="submit" value="LOGIN">
+    </form>
+    
+</body>
+</html>
